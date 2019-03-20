@@ -16,10 +16,4 @@ RUN npm install -g \
       eslint-plugin-jsx-a11y@6.2.1 \
       @meteorjs/eslint-config-meteor@1.0.5
 
-#RUN apt update \
-#  && apt-get install -y \
-#    curl
-#    bash \
-#  && rm -rf /var/lib/apt/lists/*
-
 RUN curl https://install.meteor.com/ | sh
