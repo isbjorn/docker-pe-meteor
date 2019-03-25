@@ -1,10 +1,5 @@
 FROM node:11-stretch
 
-# switch to ci/cd user
-RUN groupadd -g 5000 gitlab-build && \
-    useradd -m -s /bin/bash -u 5000 -g 5000 gitlab-build
-USER 5000:5000
-
 RUN npm install -g \
       mup@1.4.5 \
       eslint@5.15.3 \
@@ -20,5 +15,10 @@ RUN npm install -g \
       eslint-plugin-react@7.12.4 \
       eslint-plugin-jsx-a11y@6.2.1 \
       @meteorjs/eslint-config-meteor@1.0.5
+
+# switch to ci/cd user
+RUN groupadd -g 5000 gitlab-build && \
+    useradd -m -s /bin/bash -u 5000 -g 5000 gitlab-build
+USER 5000:5000
 
 RUN curl https://install.meteor.com/ | sh
