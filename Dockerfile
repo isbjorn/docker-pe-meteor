@@ -1,5 +1,8 @@
 FROM node:11-stretch
 
+# switch to ci/cd user
+USER 5000:50000
+
 RUN npm install -g \
       mup@1.4.5 \
       eslint@5.15.3 \
