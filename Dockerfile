@@ -1,7 +1,7 @@
 FROM node:11-stretch
 
 # switch to ci/cd user
-USER 5000:50000
+USER 5000:5000
 
 RUN npm install -g \
       mup@1.4.5 \
