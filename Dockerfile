@@ -16,9 +16,9 @@ RUN npm install -g \
       eslint-plugin-jsx-a11y@6.2.1 \
       @meteorjs/eslint-config-meteor@1.0.5
 
+RUN curl https://install.meteor.com/ | sh
+
 # switch to ci/cd user
 RUN groupadd -g 5000 gitlab-build && \
     useradd -m -s /bin/bash -u 5000 -g 5000 gitlab-build
 USER 5000:5000
-
-RUN curl https://install.meteor.com/ | sh
