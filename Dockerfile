@@ -1,6 +1,7 @@
 FROM node:12-stretch
 
 RUN npm install -g \
+      rsync \
       mup@1.4.5 \
       eslint@5.15.3 \
       eslint-plugin-meteor@5.1.0 \
